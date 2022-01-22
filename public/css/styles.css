@@ -9,7 +9,6 @@ body {
 .page-container {
     min-width: 100%;
     flex-grow: 100;
-    border: 1px solid #888888;
     padding: 10px 20px;
     display: flex;
     flex-direction: column;

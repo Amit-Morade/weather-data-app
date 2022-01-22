@@ -38,7 +38,7 @@ app.get('/help', (req, res) => {
 app.get('/weather', (req, res) => {
     getweather(req.query.location, (error, data) =>{
         if(error){
-            return res.send({ error: "location not found "})
+            return res.send({ error })
         }
         res.send(data)
     })

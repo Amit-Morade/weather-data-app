@@ -6,11 +6,14 @@ const getweather = function(location, callback) {
     
     request({ url, json: true }, (error, response) => {
         if(error){
-            callback(error, undefined)
+            callback({error: "cannot connect to server"}, undefined)
         }else {
+            if(response.body.error){
+                return callback("location cannot be found", undefined)
+            }
             const data = {
                 weather_description: response.body.current.weather_descriptions[0],
-                feelslike: response.body.current.feelslike
+                temperature: response.body.current.temperature
             }
             callback(undefined, data)
         }
