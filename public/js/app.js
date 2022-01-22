@@ -9,6 +9,7 @@ form.addEventListener('submit', (e) => {
     message1.textContent = "loading..."
     message2.textContent = ""
     const location = search.value
+    search.value = ""
     fetch('/weather?location=' + location).then((response) =>{
         response.json().then((data) =>{
             if(data.error){
@@ -17,7 +18,6 @@ form.addEventListener('submit', (e) => {
                 message1.textContent = "Weather is " + data.weather_description
                 message2.textContent = "Temperature is " + data.temperature + "°C"
             }
-            
             
         })
     })
