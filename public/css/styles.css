@@ -11,4 +11,16 @@ body {
     flex-grow: 100;
     border: 1px solid #888888;
     padding: 10px 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.page-body {
+    flex-grow: 1;
+    border-bottom: 1px solid #888888;
+}
+
+footer {
+    text-align: center;
+    padding: 15px 0px;
 }
