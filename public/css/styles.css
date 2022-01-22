@@ -18,9 +18,28 @@ body {
 .page-body {
     flex-grow: 1;
     border-bottom: 1px solid #888888;
+    padding: 0px;
 }
 
 footer {
     text-align: center;
     padding: 15px 0px;
+}
+
+ul {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    margin: 0px;
+    padding: 0px;
+}
+
+li {
+    margin: 10px 20px 10px 0px;
+    padding: 0px;
+}
+
+li a {
+    text-decoration: none;
+    color: #888888;
 }

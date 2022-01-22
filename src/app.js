@@ -18,6 +18,7 @@ app.use(express.static(pathToPublic))
 //setup few routes
 //about page 
 //help page
+//set up error handling
 
 app.get('', (req, res) => {
     res.render('index')
@@ -25,6 +26,18 @@ app.get('', (req, res) => {
 
 app.get('/about', (req, res) => {
     res.render('about')
+})
+
+app.get('/help', (req, res) => {
+    res.render('404', {
+        msg: "Yet to come..."
+    })
+})
+
+app.get('*', (req, res) => {
+    res.render('404', {
+        msg: "404 Page not found!"
+    })
 })
 
 app.listen(port, () => {
