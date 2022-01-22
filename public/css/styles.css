@@ -1,0 +1,14 @@
+body {
+    max-width: 650px;
+    margin: auto;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.page-container {
+    min-width: 100%;
+    flex-grow: 100;
+    border: 1px solid #888888;
+    padding: 10px 20px;
+}
