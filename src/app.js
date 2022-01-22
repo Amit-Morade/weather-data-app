@@ -1,7 +1,7 @@
 const express = require('express')
 const path = require('path')
 const hbs = require('hbs')
-const { rmSync } = require('fs')
+const getweather = require('./utils/getweather.js')
 
 const pathToPublic = path.join(__dirname, "../public")
 const pathToViews = path.join(__dirname, "../templates/views")
@@ -19,6 +19,7 @@ app.use(express.static(pathToPublic))
 //about page 
 //help page
 //set up error handling
+//set up url to send back weather json data
 
 app.get('', (req, res) => {
     res.render('index')
@@ -31,6 +32,15 @@ app.get('/about', (req, res) => {
 app.get('/help', (req, res) => {
     res.render('404', {
         msg: "Yet to come..."
+    })
+})
+
+app.get('/weather', (req, res) => {
+    getweather(req.query.location, (error, data) =>{
+        if(error){
+            return res.send({ error: "location not found "})
+        }
+        res.send(data)
     })
 })
 
