@@ -11,6 +11,7 @@ const partialsPath = path.join(__dirname, '../templates/partials');
 
 const app = express()
 const name = 'Siddhi Jadhav'
+const port = process.env.PORT || 3000
 
 app.set('view engine', 'hbs');
 app.set('views', templatesPath);
@@ -87,6 +88,6 @@ app.get('*', (req, res) => {
     });
 })
 
-app.listen(3000, () => {
+app.listen(port, () => {
     console.log('server is up');
 })
