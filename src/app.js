@@ -10,7 +10,7 @@ const templatesPath = path.join(__dirname, '../templates/views');
 const partialsPath = path.join(__dirname, '../templates/partials');
 
 const app = express()
-const name = 'Siddhi Jadhav'
+const name = 'Amit Morade'
 const port = process.env.PORT || 3000
 
 app.set('view engine', 'hbs');
